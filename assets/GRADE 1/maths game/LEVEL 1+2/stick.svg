@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-label="Wooden stick">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#9a4c16"/>
+      <stop offset=".22" stop-color="#d9822d"/>
+      <stop offset=".5" stop-color="#f4b34f"/>
+      <stop offset=".72" stop-color="#c66b22"/>
+      <stop offset="1" stop-color="#7b3512"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff1a0" stop-opacity=".08"/>
+      <stop offset=".5" stop-color="#fff1a0" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#fff1a0" stop-opacity=".04"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#55220c" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)" transform="rotate(-10 320 160)">
+    <path d="M77 230C92 211 116 202 145 198C190 191 226 170 263 147C302 123 343 117 389 107C438 96 477 76 515 49C534 36 558 37 574 53C591 70 585 95 567 109C522 145 476 166 423 179C380 190 342 195 307 218C269 243 225 265 172 272C131 277 97 265 77 249C71 244 70 238 77 230Z" fill="url(#wood)" stroke="#5b260f" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M99 231C142 238 190 226 236 202C283 177 309 157 365 148C434 138 488 111 548 67" fill="none" stroke="url(#shine)" stroke-width="12" stroke-linecap="round" opacity=".9"/>
+    <path d="M123 249C173 253 216 232 260 207M303 181C346 159 386 161 430 145M455 136C491 124 522 103 552 81" fill="none" stroke="#804016" stroke-width="5" stroke-linecap="round" opacity=".62"/>
+    <ellipse cx="170" cy="220" rx="20" ry="11" fill="none" stroke="#71330f" stroke-width="6" transform="rotate(-20 170 220)"/>
+    <ellipse cx="455" cy="122" rx="17" ry="9" fill="none" stroke="#71330f" stroke-width="5" transform="rotate(-23 455 122)"/>
+  </g>
+</svg>
