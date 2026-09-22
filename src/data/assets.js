@@ -20,7 +20,10 @@ export function resolveMathArt(artId, assetSet) {
 
 // Keep filename changes local: game code references stable manifest keys, never paths.
 export const assets = {
-  characters: {},
+  characters: {
+    idle: "assets/characters/idle.png",
+    presentation: "assets/characters/final_presentation_clean.png",
+  },
   backgrounds: {},
   items: {
     math: {
@@ -46,6 +49,7 @@ export const assets = {
     mathByLevel,
   },
   ui: {
+    conveyorRims: "assets/ui/conveyor-rims.png",
     sortingBins: {
       long: "assets/ui/long-sort-bin.png",
       round: "assets/ui/round-sort-bin.png",
@@ -74,7 +78,12 @@ export function preloadImage(src) {
   const request = new Promise((resolve) => {
     const image = new Image();
     image.decoding = "async";
-    image.onload = () => resolve({ src, loaded: true });
+    image.onload = async () => {
+      // An image can be downloaded but still cost a visible decode on its
+      // first painted frame. Decode it during the hidden warm-up instead.
+      await image.decode?.().catch(() => {});
+      resolve({ src, loaded: true });
+    };
     image.onerror = () => resolve({ src, loaded: false });
     image.src = src;
   });
